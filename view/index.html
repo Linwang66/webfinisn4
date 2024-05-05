@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application with Navigation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 2rem;
+            margin: 0 20px;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        header nav ul li {
+            margin: 0 30px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        header nav ul li a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 120px auto 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 20px;
+        }
+        .conversation {
+            padding: 10px;
+            overflow-y: auto;
+            height: 500px; /* Increase the height */
+            margin-bottom: 10px;
+        }
+        .message {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        .message-user {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .message-bot {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .message-text {
+            max-width: 80%;
+            padding: 15px;
+            background-color: #e6e6fa;
+            border-radius: 15px;
+            margin: 0 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .message-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-size: cover;
+        }
+        .input-container {
+            display: flex;
+            border-top: 2px solid #ddd;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            margin-right: 10px;
+        }
+        .send-button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .send-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Additional styles for guided questions */
+        .guided-questions {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .guided-question {
+            background-color: transparent;
+            border: 2px solid #e7eaee;
+            color: #007bff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .guided-question:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">课程大模型</a></li>
+                <li><a href="AInew.html">AI前沿新闻</a></li>
+                <li><a href="AInewsview.html">AI科普</a></li>
+                <li><a href="Services.html">帮助</a></li>
+                <li><a href="login.html">退出登录</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="chat-container">
+        <div class="conversation" id="conversation"></div>
+        <!-- Guided Questions -->
+        <div class="guided-questions">
+            <span class="guided-question" onclick="selectGuidedQuestion('人工智能是什么')">人工智能是什么</span>
+            <span class="guided-question" onclick="selectGuidedQuestion('神经网络的原理有哪些?')">神经网络的原理有哪些?</span>
+            <span class="guided-question" onclick="selectGuidedQuestion('人工智能的应用')">人工智能的应用</span>
+        </div>
+        <!-- Input field and send button -->
+        <div class="input-container">
+            <input type="text" id="messageInput" class="chat-input" placeholder="Enter your question...">
+            <button onclick="sendMessage()" class="send-button">&#x279C;</button>
+        </div>
+    </div>
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("messageInput").value;
+            if (message.trim() === "") return;
+            var conversationDiv = document.getElementById("conversation");
+            var messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", "message-user");
+            messageDiv.innerHTML = "<div class='message-avatar' style='background-image: url(indeximages/student.jpg)'></div>" + "<div class='message-text'>" + message + "</div>";
+            conversationDiv.appendChild(messageDiv);
+            conversationDiv.scrollTop = conversationDiv.scrollHeight;
+            document.getElementById("messageInput").value = "";
+
+            // Send message to backend and get response
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:8080/send-message", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        displayAnswer(response.answer);
+                    } else {
+                        console.error('Error:', xhr.status);
+                        // Handle error
+                    }
+                }
+            };
+            xhr.send(JSON.stringify({ message: message }));
+        }
+
+        function displayAnswer(answer) {
+            var conversationDiv = document.getElementById("conversation");
+            var answerDiv = document.createElement("div");
+            answerDiv.classList.add("message", "message-bot");
+            answerDiv.innerHTML = "<div class='message-avatar' style='background-image: url(indeximages/teacher.jpg)'></div>" + "<div class='message-text'>" + answer + "</div>";
+            conversationDiv.appendChild(answerDiv);
+            conversationDiv.scrollTop = conversationDiv.scrollHeight;
+        }
+
+        function selectGuidedQuestion(question) {
+            document.getElementById("messageInput").value = question;
+        }
+    </script>
+</body>
+</html>

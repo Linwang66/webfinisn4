@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News & Insights</title>
+    <style>
+        .news-article:hover {
+            transform: scale(1.05); /* 悬停时放大卡片 */
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004aad;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            margin: 0 20px;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        header nav ul li {
+            margin: 0 30px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        header nav ul li a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        header nav ul li a:hover {
+            background-color: #0074D9;
+        }
+        main {
+            padding: 140px 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .news-article {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(50% - 300px); /* Subtract margin */
+            box-sizing: border-box;
+        }
+        .news-image {
+            width: 50%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .news-article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">AI Frontier</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">课程大模型</a></li>
+            <li><a href="AInew.html">AI前沿新闻</a></li>
+            <li><a href="AInewsview.html">AI科普</a></li>
+            <li><a href="Services.html">帮助</a></li>
+            <li><a href="login.html">退出登录</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <section class="news-article">
+            <h2>欢迎来到 AI Frontier 帮助页面</h2>
+            <p>本网站致力于探索和教育计算机神经网络的迷人世界。无论你是学生、专业人士还是对人工智能感兴趣的普通人，你都会在这里找到宝贵的资源和见解。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>什么是神经网络？</h3>
+            <p>神经网络是机器学习的一个子集，是深度学习算法的核心。它们的名称和结构受到人脑的启发，模仿生物神经元之间的信号传递方式。</p>
+            <p>神经网络由输入层和输出层组成，通常还包括一个或多个隐藏层，这些隐藏层将输入转化为输出层可以使用的东西。它们是发现复杂或众多模式的优秀工具，这些模式对于人类程序员来说是难以提取和教授机器识别的。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>神经网络的应用</h3>
+            <p>如今，神经网络在许多需要传统和线性数据处理方法失败或需要太多人工干预的应用中被使用。这些应用包括：</p>
+            <ul>
+                <li>图像和语音识别</li>
+                <li>自动驾驶汽车</li>
+                <li>医疗诊断</li>
+                <li>金融服务</li>
+                <li>等等</li>
+            </ul>
+        </section>
+
+        <section class="news-article">
+            <h3>如何使用本站</h3>
+            <p>您可以使用页面顶部的导航栏来导航本站。这里有一些快速链接可以帮助您开始：</p>
+            <ul>
+                <li><a href="AInew.html">AI Frontier 新闻</a> - 发现 AI 和神经网络的最新进展。</li>
+                <li><a href="AInewsview.html">AI 教育</a> - 学习 AI 的基本概念和应用。</li>
+                <li><a href="https://appbuilder.baidu.com/s/cCOvz">课程与大模型</a> - 深入学习结构化学习和复杂模型。</li>
+            </ul>
+        </section>
+
+        <section class="news-article">
+            <h3>神经网络的历史</h3>
+            <p>神经网络的概念可以追溯到20世纪40年代，但直到近几十年来，随着计算能力的提升，它们才开始得到广泛应用。它们的发展标志着机器学习领域的一次重大革命。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>神经网络类型</h3>
+            <p>存在多种类型的神经网络，每种都有其独特的用途和结构，包括卷积神经网络（CNN）、循环神经网络（RNN）、长短时记忆网络（LSTM），以及更多。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>深度学习与神经网络</h3>
+            <p>深度学习是一种特殊类型的机器学习，它利用多层神经网络来分析各种数据，如图像、声音和文本。深度学习模型能够从大量数据中学习复杂的模式。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>神经网络的训练</h3>
+            <p>训练神经网络涉及使用大量数据来调整网络的权重，这样它可以正确地预测或分类信息。这个过程需要大量的计算资源和时间。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>常见问题解答</h3>
+            <p>如果您对神经网络或本网站的使用有任何疑问，您可以查看本节内容，我们收集了一些常见问题及其解答，以帮助您更好地理解和使用本网站。</p>
+        </section>
+
+        <section class="news-article">
+            <h3>需要更多帮助？</h3>
+            <p>如果您有问题或需要进一步的帮助，请随时与我们联系。您也可以关注我们的服务链接和注销页面以获取更多信息。</p>
+            <p>电子邮件：support@ai-frontier.com</p>
+        </section>
+    </main>
+
+    <footer>
+    <p>Copyright © 2024 Your Company Name. All rights reserved.</p>
+    <p><a href="https://www.neuralnetworks123.com.cn/"target="_blank" style="color: white;" >Try GPT-3.5</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AI 登录界面</title>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.login-container {
+			width: 800px;
+			height: 550px;
+			display: flex;
+			border-radius: 16px;
+			overflow: hidden;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+		}
+		.login-info {
+			background-color: #f4f4f8;
+			width: 50%;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+		.login-form {
+			background-color: #ffffff;
+			width: 50%;
+			padding: 40px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		h1 {
+			font-size: 28px;
+			color: #333;
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: 20px;
+			color: #666;
+		}
+		.login-image {
+			width: 460px;
+			height: 360px;
+			margin-bottom: 20px;
+		}
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 2px solid #ccc;
+			border-radius: 8px;
+			font-size: 16px;
+		}
+		button {
+			width: 100%;
+			padding: 10px;
+			background-color: #4a67d6;
+			color: white;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			font-size: 18px;
+			transition: background 0.3s;
+		}
+		button:hover {
+			background-color: #3b4dbf;
+		}
+		a {
+			color: #4a67d6;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		/* 新增样式：将视频覆盖整个页面 */
+		video {
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -1; /* 确保视频在最底层 */
+		}
+	</style>
+</head>
+<body>
+<video autoplay muted loop>
+	<source src="images/video.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+</video>
+<div class="login-container">
+	<div class="login-info">
+		<h1>与AI对话中学习,</h1>
+		<p>共创人工智能的美好平台</p>
+		<img src="images/1714533158047.png" alt="AI Logo" class="login-image">
+	</div>
+	<div class="login-form">
+		<h2>账户登录</h2>
+		<input type="text" id="username" placeholder="用户名">
+		<input type="password" id="password" placeholder="密码">
+		<button onclick="login()">登录</button>
+		<p>还没有账号? <a href="#">立即注册</a></p>
+	</div>
+</div>
+
+<script>
+	function login() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+
+		// 检查用户名和密码是否正确
+		if (username === "root" && password === "123456") {
+			// 如果正确，重定向到 home.html
+			window.location.href = "index.html";
+		} else {
+			// 如果不正确，显示错误信息
+			alert("账号或密码错误");
+		}
+	}
+</script>
+
+</body>
+</html>

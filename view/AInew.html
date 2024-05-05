@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News & Insights</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004aad;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            margin: 0 20px;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        header nav ul li {
+            margin: 0 30px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        header nav ul li a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        header nav ul li a:hover {
+            background-color: #0074D9;
+        }
+        .news-article {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(50% - 20px); /* 调整宽度计算 */
+            box-sizing: border-box;
+            transition: transform 0.3s; /* 添加过渡以实现平滑缩放 */
+        }
+
+        .news-article:hover {
+            transform: scale(1.05); /* 悬停时放大卡片 */
+        }
+
+        main {
+            padding: 140px 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .news-article {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            width: calc(50% - 300px); /* Subtract margin */
+            box-sizing: border-box;
+        }
+        .news-image {
+            width: 50%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .news-article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">AI Frontier</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">课程大模型</a></li>
+            <li><a href="AInew.html">AI前沿新闻</a></li>
+            <li><a href="AInewsview.html">AI科普</a></li>
+            <li><a href="Services.html">帮助</a></li>
+            <li><a href="login.html">退出登录</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="news-article">
+        <a href="https://csdnnews.blog.csdn.net/article/details/138339305?spm=1000.2115.3001.5926&ydreferer=aHR0cHM6Ly93d3cuY3Nkbi5uZXQv">
+            <img src="AInewimages/1.jpg" alt="AI Breakthrough" class="news-image">
+            <h2>革命性人工智能算法揭晓</h2>
+            <p>了解新的人工智能算法，它有望彻底改变我们与技术的互动方式……</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="https://www.cn-healthcare.com/articlewm/20211223/content-1299026.html">
+            <img src="AInewimages/2.jpg" alt="AI in Healthcare" class="news-image">
+            <h2>人工智能改变医疗保健</h2>
+            <p>了解如何将人工智能集成到医疗保健中以改善患者的治疗效果。</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="http://www.xinhuanet.com/tech/20230119/849d98a850da4e6eba5a1d364f90adc3/c.html">
+            <img src="AInewimages/3.jpg" alt="AI Ethics" class="news-image">
+            <h2>解决人工智能伦理问题</h2>
+            <p>探索挑战和解决方案，以确保人工智能发展中的道德实践。</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="https://www.msn.com/zh-cn/news/other/%E5%9B%BD%E5%86%85%E9%A6%96%E4%B8%AA%E6%B1%BD%E8%BD%A6%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%A0%87%E5%87%86%E5%8F%91%E5%B8%83-%E5%8A%A9%E5%8A%9B-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD-%E5%9C%A8%E6%B1%BD%E8%BD%A6%E8%A1%8C%E4%B8%9A%E5%85%A8%E9%9D%A2%E8%90%BD%E5%9C%B0/ar-AA1nN5aT">
+            <img src="AInewimages/4.jpg" alt="AI in Automotive" class="news-image">
+            <h2>人工智能推动汽车创新</h2>
+            <p>看看人工智能技术如何重塑汽车行业的未来.</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="https://zhuanlan.zhihu.com/p/113855173">
+            <img src="AInewimages/5.jpg" alt="Robotics and AI" class="news-image">
+            <h2>人工智能增强的机器人技术</h2>
+            <p>揭示人工智能在机器人技术中的整合，从而产生更高效、适应性更强的机器人。</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="https://www.cas.cn/zjs/201902/t20190218_4679625.shtml">
+            <img src="AInewimages/6.jpg" alt="Robotics and AI" class="news-image">
+            <h2>人工智能技术</h2>
+            <p>了解人工智能向何处去，首先要知道人工智能从何处来。...</p>
+        </a>
+    </div>
+    <div class="news-article">
+        <a href="https://www.thepaper.cn/newsDetail_forward_10690188">
+            <img src="AInewimages/7.jpg" alt="AI in Finance" class="news-image">
+            <h2>人工智能在金融服务中的应用</h2>
+            <p>探讨人工智能如何在金融领域中提供创新解决方案。</p>
+        </a>
+    </div>
+
+    <div class="news-article">
+        <a href="https://zhuanlan.zhihu.com/p/91507385">
+            <img src="AInewimages/8.jpg" alt="AI in Education" class="news-image">
+            <h2>人工智能重塑教育行业</h2>
+            <p>分析人工智能技术如何帮助教育行业实现个性化学习和效率提升。</p>
+        </a>
+    </div>
+
+    <div class="news-article">
+        <a href="https://zhuanlan.zhihu.com/p/669537317">
+            <img src="AInewimages/9.jpg" alt="AI and Environment" class="news-image">
+            <h2>人工智能与环境保护</h2>
+            <p>讨论人工智能如何助力环境保护，包括气候变化监测和资源管理。</p>
+        </a>
+    </div>
+
+    <div class="news-article">
+        <a href="https://zhuanlan.zhihu.com/p/52561338">
+            <img src="AInewimages/10.jpg" alt="AI in Retail" class="news-image">
+            <h2>人工智能在零售业的变革</h2>
+            <p>探索人工智能在零售业中的多种应用，从库存管理到客户体验优化。</p>
+        </a>
+    </div>
+
+    <div class="news-article">
+        <a href="https://zhuanlan.zhihu.com/p/676804495">
+            <img src="AInewimages/11.jpg" alt="AI and Gaming" class="news-image">
+            <h2>人工智能在游戏产业的影响</h2>
+            <p>分析人工智能如何改变游戏设计和玩家交互方式。</p>
+        </a>
+    </div>
+
+    <div class="news-article">
+        <a href="https://cj.sina.com.cn/articles/view/3860416827/e619493b01900vmzg">
+            <img src="AInewimages/12.jpg" alt="AI for Public Safety" class="news-image">
+            <h2>人工智能在公共安全领域的应用</h2>
+            <p>介绍人工智能在提高城市安全、防灾减灾等方面的作用和挑战。</p>
+        </a>
+    </div>
+
+</main>
+<footer>
+    <p>Copyright © 2024 Your Company Name. All rights reserved.</p>
+    <p><a href="https://www.neuralnetworks123.com.cn/"target="_blank" style="color: white;" >Try GPT-3.5</a></p>
+</footer>
+
+</body>
+</html>
